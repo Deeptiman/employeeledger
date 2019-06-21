@@ -1,0 +1,155 @@
+{{define "body"}}
+
+<title>Register</title>
+
+{{ if .Response }}
+
+	<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+	  <div class="mdl-snackbar__text"></div>
+	  <button class="mdl-snackbar__action" type="button"></button>
+	</div>
+
+	<script>
+
+	r(function(){
+	    var snackbarContainer = document.querySelector('#demo-toast-example');
+		
+	{{ if .Success }}
+	var data = { message: 'Successful'};
+	snackbarContainer.MaterialSnackbar.showSnackbar(data);
+	{{ end }}
+
+	{{ if .Error }}
+	var data = { message: {{ .ErrorMsg }} };
+	snackbarContainer.MaterialSnackbar.showSnackbar(data);
+	{{ end }}	
+	    
+	});
+	function r(f){ /in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+	</script>
+
+{{ end }}
+
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header custom-header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Employeeledger</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+       <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link roboto-font-bold custom-header" href="">v.1.0</a>
+      </nav>
+    </div>
+  </header>
+   
+  <main class="mdl-layout__content">
+    <div class="page-content">
+
+	<div class="register-content">
+
+<center>
+							    <img src="/assets/css/images/logo_fabric.png" width="80" height="80"/>
+							     <div class="fabric-header">
+								<b class="roboto-font-condensed-bold-italic"> User Register </b>
+							     </div>	
+						    </center>
+	<div class="mdl-shadow--2dp demo-card-wide">
+		
+	    	<div class="mdl-card__supporting-text card-content">	
+		
+						
+						    <form class="form-inline" action="/register.html" method="post">
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							    
+		                    			    <input type= "text" class="form-control mdl-textfield__input" style="font-family  : Roboto-Medium;	
+											font-size    : 13px;" id="nameValue" title="Please enter name" required name="name"/>
+	                    				    <label class="mdl-textfield__label" for="nameValue">Name</label>
+							    <i class="material-icons mdl-textfield__label__icon">account_box</i>
+							    	
+				                	</div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	 	        	            		    <input type= "text" class="form-control mdl-textfield__input" style="font-family  : Roboto-Medium;	
+											 font-size    : 13px;" id="emailValue"  title="Please enter email" required name="email"/>
+	        	            		            <label class="mdl-textfield__label" for="emailValue">Email</label>
+							    <i class="material-icons mdl-textfield__label__icon">mail</i>
+				        	        </div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	 	        	            		    <input type= "text" class="form-control mdl-textfield__input" style="font-family  : Roboto-Medium;	
+											 font-size    : 13px;" id="companyValue"  title="Please enter company" required name="company"/>
+	        	            		            <label class="mdl-textfield__label" for="companyValue">Company</label>
+							    <i class="material-icons mdl-textfield__label__icon">location_city</i>
+				        	        </div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	 	        	            		    <input type= "text" class="form-control mdl-textfield__input" style="font-family  : Roboto-Medium;	
+											 font-size    : 13px;" id="occupationValue"  title="Please enter occupation" required name="occupation"/>
+	        	            		            <label class="mdl-textfield__label" for="occupationValue">Occupation</label>
+							    <i class="material-icons mdl-textfield__label__icon">assignment_ind</i>
+				        	        </div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	 	        	            		    <input type= "text" class="form-control mdl-textfield__input" style="font-family  : Roboto-Medium;	
+											 font-size    : 13px;" id="salaryValue"  
+title="Please enter salary" onkeypress="return isNumberKey(event)" required name="salary"/>
+	        	            		            <label class="mdl-textfield__label" for="salaryValue">Salary</label>
+							    <i class="material-icons mdl-textfield__label__icon">attach_money</i>
+				        	        </div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	  		                    		    <input class="form-control mdl-textfield__input" type="password" style="font-family  : Roboto-Medium;	
+											  font-size    : 13px;" id="passwordValue"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required name="password"/>
+		                    		            <label class="mdl-textfield__label" for="passwordValue">Password</label>
+							    <i class="material-icons mdl-textfield__label__icon">lock</i>
+			                		</div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<span class="mdl-chip">
+    									<span class="mdl-chip__text">Please choose usermode</span>
+								</span>
+								<br><br>				
+								<label class = "mdl-radio mdl-js-radio" for = "option1">
+					    <input type = "radio" id = "option1" value="Admin" required title="Enter any of the usermode" name = "usermode" class = "mdl-radio__button">
+                  			    <span class = "mdl-radio__label roboto-font-condensed-regular" style="color: #000; font-size    : 14px;">Admin</span>
+						               </label>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<label class = "mdl-radio mdl-js-radio" for = "option2">
+					     <input type = "radio" id = "option2" value="User" required title="Enter any of the usermode" name = "usermode" class = "mdl-radio__button">
+			                     <span class = "mdl-radio__label roboto-font-condensed-regular" style="color: #000; font-size    : 14px;">User</span>
+						               </label>
+
+							</div>
+							<input type="hidden" name="signupSubmitted" value="true">
+							<button id="signup" class="mdl-button--dark mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        		                			Register
+        		               			</button>
+						</form>
+
+				<div class="layout roboto-font-bold">
+									
+							    <span style="color: #000"> Already registered? </span> <a href="/login.html"><b>Login</b> </a>				
+
+							</div>
+							
+     	 	</div>
+	</div>
+</div>
+	
+
+    </div>
+  </main>
+  <footer class="mdl-mini-footer custom-footer">
+	<div class="mdl-mini-footer__left-section">
+	  <div class="mdl-logo" style="font-size: 14px; ">Hyperledger Fabric Demo</div>
+	  <div class="mdl-logo" style="font-size: 14px; justify-content: right;">v.1.0</div>			    
+	</div>
+  </footer>
+</div>
+
+{{ end }}

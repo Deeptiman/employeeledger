@@ -1,0 +1,120 @@
+{{define "body"}}
+
+<title>Login</title>
+
+{{ if .Response }}
+
+			<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+			  <div class="mdl-snackbar__text"></div>
+			  <button class="mdl-snackbar__action" type="button"></button>
+			</div>
+			
+			<script type="text/javascript">
+ 	
+				$(document).ready(function() {
+							 
+					$(window).on('popstate', function(event) {
+							alert("pop");
+					});
+				})
+
+			</script>
+
+			<script>
+				r(function(){
+				    var snackbarContainer = document.querySelector('#demo-toast-example');
+					
+				{{ if .Success }}
+				var data = { message: 'Successful'};
+				snackbarContainer.MaterialSnackbar.showSnackbar(data);
+				{{ end }}
+
+				{{ if .Error }}
+				var data = { message: {{ .ErrorMsg }} };
+				snackbarContainer.MaterialSnackbar.showSnackbar(data);
+				{{ end }}	
+				    
+				});
+				function r(f){ /in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+			</script>
+
+{{ end }}
+
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header custom-header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Employeeledger</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+       <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link roboto-font-bold custom-header" href="">v.1.0</a>
+      </nav>
+    </div>
+  </header>
+   
+  <main class="mdl-layout__content">
+    <div class="page-content">
+	
+	<div class="login-content">
+
+<center>
+							     <img src="/assets/css/images/logo_fabric.png" width="80" height="80"/>
+						    
+							     <div class="fabric-header">
+								<b class="roboto-font-condensed-bold-italic"> User Login </b>
+							     </div>	
+						    	</center>
+
+			<div class="mdl-shadow--2dp demo-card-wide">
+		
+    					<div class="mdl-card__supporting-text card-content">
+						    						  
+						    <form class="form-inline" action="/login.html" method="post">
+							
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="form-control mdl-textfield__input" id="emailValue" style="font-family  : Roboto-Medium;	
+											font-size    : 13px;" title="Please enter email" required name="email"/>
+											<label class="mdl-textfield__label" for="emailValue">Email</label>
+									<i class="material-icons mdl-textfield__label__icon">mail</i>
+										</div>
+
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				        	            	 <input class="form-control mdl-textfield__input" type="password" style="font-family  : Roboto-Medium;	
+											 font-size    : 13px;" title="Please enter password" required id="password" name="password"/>
+				        	            	 <label class="mdl-textfield__label" for="passwordValue">Password</label>
+								 <i class="material-icons mdl-textfield__label__icon">lock</i>
+								</div>
+								
+						        <div>
+							
+								<input type="hidden" name="signinSubmitted" value="true">
+								<button id="signin" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Login</button>			
+								</div>
+
+								<div class="layout roboto-font-bold">									
+							    	<span style="color: #000"> Not registered? </span><a href="/register.html">Create an account </a>				
+								</div>
+
+						   </form>
+						</div>
+
+					  </div>
+
+		</div>
+    </div>
+  </main>
+  <footer class="mdl-mini-footer custom-footer">
+	<div class="mdl-mini-footer__left-section">
+	  <div class="mdl-logo" style="font-size: 14px; ">Hyperledger Fabric Demo</div>
+	  <div class="mdl-logo" style="font-size: 14px; justify-content: right;">v.1.0</div>			    
+	</div>
+  </footer>
+</div>
+
+		
+
+{{ end }}

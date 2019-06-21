@@ -1,0 +1,346 @@
+{{define "body"}}
+
+<title>User Dashboard</title>
+
+<script src="/assets/js/dialog-polyfill.js"></script>
+<link href="/assets/css/dialog-polyfill.css" rel="stylesheet">
+
+
+{{ if .Response }}
+
+	{{ if .Error }}
+	
+		{{ .ErrorMsg }}
+		
+	{{ end }}
+	
+	{{ if .Success }}
+			
+
+		{{ if .Admin }}
+			<script type="text/javascript">
+ 	
+				$(document).ready(function() {
+				
+					$(window).on('popstate', function(event) {
+							alert("pop");
+					});
+					
+					$('#example').DataTable( {
+								"columnDefs": [
+								{ "width": "20%", "targets": 0, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "20%", "targets": 1, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "10%", "targets": 2, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "10%", "targets": 3, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "10%", "targets": 4, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "10%", "targets": 5, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "10%", "targets": 6, "className": "mdl-data-table__cell--non-numeric" }
+								]
+					});
+				
+
+					 /*$('#example').on("click", "img", function(){
+					      console.log($(this).parent());
+					      table.row($(this).parents('tr')).remove().draw(false);
+					 });*/
+
+					$(".edit").click(function(evt){
+						
+						var userId = $("#userId"+$(this).attr("id")).val();
+						var userType = $("#userType"+$(this).attr("id")).val();
+					    var name = $("#name"+$(this).attr("id")).val();
+						var email = $("#email"+$(this).attr("id")).val();
+						var company = $("#company"+$(this).attr("id")).val();
+						var occupation = $("#occupation"+$(this).attr("id")).val();								
+						var salary = $("#salary"+$(this).attr("id")).val();
+	
+					       
+						document.getElementById('userIdValue').value = userId;
+						document.getElementById('userTypeValue').value = userType;
+						document.getElementById('nameValue').value = name;
+						document.getElementById('emailValue').value = email;
+						document.getElementById('companyValue').value = company;
+						document.getElementById('occupationValue').value = occupation;
+						document.getElementById('salaryValue').value = salary;
+
+						 var dialog = document.querySelector('dialog');
+					 						
+						 var showDialogButton = document.getElementById($(this).attr("id"));
+						 if (! dialog.showModal) {
+						    dialogPolyfill.registerDialog(dialog);
+						 }
+						    
+						 showDialogButton.addEventListener('click', function() {
+						     dialog.showModal();
+						 });
+						 dialog.querySelector('.close').addEventListener('click', function() {
+						     dialog.close();
+						 });
+						
+					   });
+					  
+				});
+
+			</script>
+		{{end}}
+			
+		{{ if .User }}
+
+			<script type="text/javascript">
+		
+				$(document).ready(function() {
+				
+					$(window).on('popstate', function(event) {
+							alert("pop");
+					});
+					
+					$('#example').DataTable( {
+								"columnDefs": [
+								{ "width": "20%", "targets": 0, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "20%", "targets": 1, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "10%", "targets": 2, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "10%", "targets": 3, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "10%", "targets": 4, "className": "mdl-data-table__cell--non-numeric" },
+								{ "width": "10%", "targets": 5, "className": "mdl-data-table__cell--non-numeric" }
+								]
+					});
+
+					$(".edit").click(function(evt){
+						
+						var userId = $("#userId"+$(this).attr("id")).val();
+						var userType = $("#userType"+$(this).attr("id")).val();
+					    var name = $("#name"+$(this).attr("id")).val();
+						var email = $("#email"+$(this).attr("id")).val();
+						var company = $("#company"+$(this).attr("id")).val();
+						var occupation = $("#occupation"+$(this).attr("id")).val();								
+						var salary = $("#salary"+$(this).attr("id")).val();
+	
+					       
+						document.getElementById('userIdValue').value = userId;
+						document.getElementById('userTypeValue').value = userType;
+						document.getElementById('nameValue').value = name;
+						document.getElementById('emailValue').value = email;
+						document.getElementById('companyValue').value = company;
+						document.getElementById('occupationValue').value = occupation;
+						document.getElementById('salaryValue').value = salary;
+
+						 var dialog = document.querySelector('dialog');
+					 						
+						 var showDialogButton = document.getElementById($(this).attr("id"));
+						 if (! dialog.showModal) {
+						    dialogPolyfill.registerDialog(dialog);
+						 }
+						    
+						 showDialogButton.addEventListener('click', function() {
+						     dialog.showModal();
+						 });
+						 dialog.querySelector('.close').addEventListener('click', function() {
+						     dialog.close();
+						 });
+						
+					});
+
+				});
+
+			</script>		
+
+		{{end}}	
+
+
+	<dialog class="mdl-dialog">
+		<center>			
+		   <img src="/assets/css/images/logo_fabric.png" width="80" height="80"/>	
+		        <div class="fabric-header">	
+			     <b class="roboto-font-condensed-bold-italic mdl-dialog__title">Update User data</b>
+			</div>	
+		</center>
+
+		<div class="mdl-dialog__content">				
+						 						 
+		    <form class="form-inline" action="/update_user" method="post">
+				
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+										    
+			<input type= "text" value="name" style="font-family  : Roboto-Medium;	
+			  font-size    : 13px;" class="form-control mdl-textfield__input" id="nameValue" title="Please enter name" required name="name" />
+				<label class="mdl-textfield__label" for="nameValue">Name</label>
+				    <i class="material-icons mdl-textfield__label__icon">account_box</i>
+										    	
+			</div>
+
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		 	   <input type= "text" value="company" style="font-family  : Roboto-Medium;	
+			  font-size    : 13px;" class="form-control mdl-textfield__input" id="companyValue"  title="Please enter company" required name="company" />
+			   <label class="mdl-textfield__label" for="companyValue">Company</label>
+			   <i class="material-icons mdl-textfield__label__icon">location_city</i>
+			</div>
+
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			   <input type= "text" value="occupation" style="font-family  : Roboto-Medium;	
+			  font-size    : 13px;" class="form-control mdl-textfield__input" id="occupationValue"  title="Please enter occupation" required name="occupation" />
+			    <label class="mdl-textfield__label" for="occupationValue">Occupation</label>
+			    <i class="material-icons mdl-textfield__label__icon">assignment_ind</i>
+			</div>
+
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			   <input type= "text" value="salary" style="font-family  : Roboto-Medium;	
+			  font-size    : 13px;" class="form-control mdl-textfield__input" id="salaryValue"  
+			title="Please enter salary" onkeypress="return isNumberKey(event)" required name="salary" />
+			   <label class="mdl-textfield__label" for="salaryValue">Salary</label>						       <i class="material-icons mdl-textfield__label__icon">attach_money</i>
+			</div>
+							 
+	       </div>
+						    <div class="mdl-dialog__actions">
+							      <input type="hidden" name="email" id="emailValue" value="">	
+							      <input type="hidden" name="userId" id="userIdValue" value="">
+							      <input type="hidden" name="userType" id="userTypeValue" value="">	
+							      <input type="hidden" name="updateUserSubmitted" value="true">	
+							<input type="submit" name="submit" class="mdl-button" value="Update"/>				
+								</form>
+
+						      <input type="button" class="mdl-button close"  value="Cancel"/>
+						    </div>
+					  </dialog>
+				 
+
+
+			<!-- Always shows a header, even in smaller screens. -->
+			<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			  <header class="custom-header mdl-layout__header mdl-layout__header--waterfall">
+			    <div class="mdl-layout__header-row">
+			      <!-- Title -->
+			      <span class="mdl-layout-title" style="font-size: 14px;">Welcome {{ .UserData.Name }}</span>
+			      <!-- Add spacer, to align navigation to the right -->
+			      <div class="mdl-layout-spacer"></div>
+			      <!-- Navigation. We hide it in small screens. -->
+			      <nav class="mdl-navigation mdl-layout--large-screen-only roboto-font-bold">
+
+					<span style="color:#fff; margin-right: 10px; font-size: 13px;">{{ .UserData.UserType }}</span>
+					
+					<form class="form-inline" action="/change_password.html" method="post">
+						<input type="hidden" name="email" value="{{ .UserData.Email }}">
+						<input type="hidden" name="name" value="{{ .UserData.Name }}">	
+						<input type="hidden" name="usermode" value="{{ .UserData.UserType }}">							
+				 	    <input type="hidden" name="openChangePwdSubmitted" value="true">	
+						<input type="submit" name="submit" id="changePwd" style="color: black; padding: 8px; font-size: 13px;" value="Change Password" width="24" height="24"/> 	
+					</form>  
+					<a class="mdl-navigation__link" href="/logout" style="color: white; font-size: 13px;">Logout</a>
+
+			      </nav>
+			    </div>
+			  </header>
+			  
+			  <main class="mdl-layout__content">
+			    <div class="page-content">
+
+				<div class="datatable-wide">
+					<table id="example" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">
+						   {{ if .Admin }}
+							<thead>
+							    <tr>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Company</th>
+								<th>Occupation</th>
+								<th>Salary</th>
+								<th>Edit</th>
+								<th>Delete</th>					
+							    </tr>
+							</thead>
+							<tbody>						
+							 
+								  {{range $id, $allUsersData := .AllUsersData}}	
+									{{ $name  :=  .Name  }} 
+									{{ $email :=  .Email }}
+									
+								  <tr>					
+									<td> {{$allUsersData.Name}} </td>
+									<td> {{$allUsersData.Email}} </td>
+									<td> {{$allUsersData.Company}} </td>
+									<td> {{$allUsersData.Occupation}} </td>
+									<td> &#36;{{$allUsersData.Salary}} </td>
+									<td>
+									
+										<input type="hidden" id="userId{{$id}}" value="{{$allUsersData.ID}}">
+										<input type="hidden" id="userType{{$id}}" value="{{$allUsersData.UserType}}">
+																								
+										<input type="hidden" id="name{{$id}}" value="{{$allUsersData.Name}}">
+										<input type="hidden" id="email{{$id}}" value="{{$allUsersData.Email}}">
+										<input type="hidden" id="company{{$id}}" value="{{$allUsersData.Company}}">
+										<input type="hidden" id="occupation{{$id}}" value="{{$allUsersData.Occupation}}">
+										<input type="hidden" id="salary{{$id}}" value="{{$allUsersData.Salary}}">									
+										
+										<input type="image" name="submit" style="padding: 5px;" src="/assets/css/images/edit.png"  id="{{$id}}" class="edit" width="24" height="24"/>
+									</td>
+									
+									<td> 
+									
+										<form class="form-inline" action="/delete_user" method="post">
+										<input type="hidden" name="email" value="{{$allUsersData.Email}}">
+										<input type="hidden" name="deleteUserSubmitted" value="true">	
+										<input type="image" name="submit" id="{{$id}}" style="padding: 5px;" src="/assets/css/images/delete.png" class="delete" width="24" height="24"/> 	
+										</form>  
+ 
+									</td> 	
+								  </tr>
+								  {{end}} 
+							</tbody>
+						   {{end}}	
+
+						{{ if .User }}
+
+							<thead>
+							    <tr>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Company</th>
+								<th>Occupation</th>
+								<th>Salary</th>
+								<th>Edit</th>
+							    </tr>
+							</thead>
+							<tbody>	
+
+								<tr>
+								     <td> {{ .UserData.Name}} </td>	
+								     <td> {{ .UserData.Email}} </td>
+								     <td> {{ .UserData.Company}} </td>
+								     <td> {{ .UserData.Occupation}} </td>
+									 <td> &#36;{{ .UserData.Salary}} </td>
+									 <td>	
+										 	{{ $id := "0" }}
+											<input type="hidden" id="userId{{$id}}" value="{{.UserData.ID}}">
+											<input type="hidden" id="userType{{$id}}" value="{{.UserData.UserType}}">
+																									
+											<input type="hidden" id="name{{$id}}" value="{{.UserData.Name}}">
+											<input type="hidden" id="email{{$id}}" value="{{.UserData.Email}}">
+											<input type="hidden" id="company{{$id}}" value="{{.UserData.Company}}">
+											<input type="hidden" id="occupation{{$id}}" value="{{.UserData.Occupation}}">
+											<input type="hidden" id="salary{{$id}}" value="{{.UserData.Salary}}">									
+											
+										 	<input type="image" name="submit" style="padding: 5px;" src="/assets/css/images/edit.png"  id="{{$id}}" class="edit" width="24" height="24"/>
+									 </td>
+								</tr>
+
+							</tbody>
+						{{end}}
+			
+					</table>  
+				  </div>
+
+			   </div>
+			  </main>
+			<footer class="mdl-mini-footer custom-footer">
+			  <div class="mdl-mini-footer__left-section">
+			    <div class="mdl-logo" style="font-size: 14px; ">Hyperledger Fabric Demo</div>
+			    <div class="mdl-logo" style="font-size: 14px; justify-content: right;">v.1.0</div>			    
+			  </div>
+			</footer>
+
+			</div>
+			
+	{{ end }}
+
+{{end}}
+		
+{{end}}
