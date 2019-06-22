@@ -73,6 +73,11 @@ $ go version go1.<span class="hljs-number">11</span> linux/amd64
 </code></pre>
 </li>
 <li>
+<h6><a id="orderergenesisblock__This_will_initialize_the_Fabrics_orderer_65"></a>employeeledger.channel.tx Channel is a private network between peers to communicate in a network</h6>
+<pre><code>  ./bin/configtxgen -profile EmployeeLedger -outputCreateChannelTx ./artifacts/employeeledger.channel.tx -channelID employeeledger
+</code></pre>
+</li>
+<li>
 <h6><a id="org1employeeledgeranchorstx__This_artifact_will_allow_the_peers_to_interact_with_each_other_in_a_network_68"></a>org1.employeeledger.anchors.tx : This artifact will allow the peers to interact with each other in a network.</h6>
 <pre><code>  ./bin/configtxgen -profile EmployeeLedger -outputAnchorPeersUpdate ./artifacts/org1.employeeledger.anchors.tx -channelID employeeledger -asOrg EmployeeLedgerOrganization1
 </code></pre>
