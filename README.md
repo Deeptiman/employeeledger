@@ -111,4 +111,7 @@ $ go version go1.<span class="hljs-number">11</span> linux/amd64
 <h5>Dashboard</h5>
 
 <img src="screenshots/dashboard.png">
+<<<<<<< HEAD
 
+=======
+>>>>>>> af7e5c2ccab8697682b3845d195c5e542e441e17
