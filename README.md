@@ -98,6 +98,24 @@ $ go version go1.<span class="hljs-number">11</span> linux/amd64
 <p>You can check by executing following command</p>
 <pre><code>docker ps
 </code></pre>
+
+<h4>Dependency Issues</h4>
+<ol>
+   <li>
+      Hyperledger fabric-sdk-go is still in development. If you do dep ensure for each <b>Gopkg.toml</b> in <b>EmployeeLedger</b> and <b>Chaincode</b>, it will download the govendor folder for each module but it will have some compilation issues while building the project. I have corrected the error for both <b>EmployeeLedger and Chaincode</b> folder.
+   </li>
+   <li>
+   Please download the vendor folder and add it in your project repo.   
+      
+   EmployeeLedger - https://www.dropbox.com/s/ry1jmw0y9xliose/vendor.zip?dl=0
+   
+   Chaincode - https://www.dropbox.com/s/31nnqflpqwaywoa/vendor.zip?dl=0
+   </li>
+   <li>
+   <b>Add vendor folders at the location where Gopkg.toml file is located.</b>
+   </li>
+</ol>
+
 <h4><a id="Run_the_application_90"></a>Run the application</h4>
 <ul>
 <li>As you have sucssefully deployed your blockchain network. Now you can run the application.</li>
