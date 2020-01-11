@@ -4,6 +4,8 @@
 
 <p> However, this explanation guide does not explain how Hyperledger Fabric works, so for the information, you can follow at <a href="https://www.hyperledger.org/projects/fabric">Hyperledger.</a> </p>
 
+<p><b>Medium writeup : </b> <a href="https://medium.com/@deeptiman/a-single-organization-application-in-hyperledger-fabric-146c351b04b7">https://medium.com/@deeptiman/a-single-organization-application-in-hyperledger-fabric-146c351b04b7</a>
+
 <h4><a id="Installation_6"></a>Installation</h4>
 <p>Employeeledger requires <a href="https://www.docker.com/">Docker</a> &amp; <a href="https://golang.org/">Go</a> to run.</p>
 <h3><a id="Docker_10"></a>Docker</h3>
