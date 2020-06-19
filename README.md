@@ -1,4 +1,5 @@
 <h1><a id="Employeeledger_0"></a>Employeeledger</h1>
+<p>     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Deeptiman/employeeledger">  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Deeptiman/employeeledger"> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Deeptiman/employeeledger"> </p>
 <p><a href="https://www.hyperledger.org/projects/fabric"><img src="https://www.hyperledger.org/wp-content/uploads/2016/09/logo_hl_new.png" alt="N|Solid"></a></p>
 <p>Employeeledger is a web application written in Go language to demonstrate the Hyperledger Fabric Blockchain framework. The project repo has been designed to upload employee records into the blockchain and also has the functionality to update, delete the record stored securely in the Hyperledger framework.</p>
 
