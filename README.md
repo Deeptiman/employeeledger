@@ -132,11 +132,11 @@ $ go version go1.<span class="hljs-number">11</span> linux/amd64
 
 <h5>Login</h5>
 
-<img src="screenshots/user_login.png">
+<img src="screenshots/export_user_login.png">
 
 <h5>Dashboard</h5>
 
-<img src="screenshots/dashboard.png">
+<img src="screenshots/export_dashboard.png">
 
 <h2>License</h2>
 <p>This project is licensed under the <a href="https://github.com/Deeptiman/employeeledger/blob/master/LICENSE">MIT License</a></p>
