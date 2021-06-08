@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/employeeledger/chaincode/model"
-	"github.com/hyperledger/fabric/core/chaincode/shim"
-	pb "github.com/hyperledger/fabric/protos/peer"
+	"employeeledger/chaincode/model"
+	"github.com/hyperledger/fabric-chaincode-go/shim"
+	pb "github.com/hyperledger/fabric-protos-go/peer"
 )
 
 func (t *HelloWorldServiceChaincode) updateUserData(stub shim.ChaincodeStubInterface, args []string) pb.Response {

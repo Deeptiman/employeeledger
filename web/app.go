@@ -3,7 +3,7 @@ package web
 import (
 	"fmt"
 	"net/http"
-	"github.com/employeeledger/web/controllers"
+	"employeeledger/web/controllers"
 )
 
 func Serve(app *controllers.Application) {

@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/employeeledger/blockchain"
-	"github.com/employeeledger/web"
-        "github.com/employeeledger/web/controllers"
+	"employeeledger/blockchain"
+	"employeeledger/web"
+    "employeeledger/web/controllers"
 	"os"
 )
 
@@ -16,12 +16,12 @@ func main() {
 
 		// Channel parameters
 		ChannelID:      	"employeeledger",
-		ChannelConfig:  	os.Getenv("GOPATH") + "/src/github.com/employeeledger/fixtures/artifacts/employeeledger.channel.tx",
+		ChannelConfig:  	os.Getenv("GOPATH") + "/src/employeeledger/fixtures/artifacts/employeeledger.channel.tx",
 
 		// Chaincode parameters
 		ChaincodeID:    	"employeeledger",
 		ChaincodeGoPath: 	os.Getenv("GOPATH"),
-		ChaincodePath:   	"github.com/employeeledger/chaincode/",
+		ChaincodePath:   	"employeeledger/chaincode/",
 		OrgAdmin:        	"Admin",
 		OrgName:         	"org1",
 		ConfigFile:      	"config.yaml",

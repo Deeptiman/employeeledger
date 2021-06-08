@@ -58,7 +58,7 @@ client:
 
   # Root of the MSP directories with keys and certs.
   cryptoconfig:
-    path: ${GOPATH}/src/github.com/employeeledger/fixtures/crypto-config
+    path: ${GOPATH}/src/employeeledger/fixtures/crypto-config
 
   # Some SDKs support pluggable KV stores, the properties under "credentialStore"
   # are implementation specific
@@ -193,7 +193,7 @@ orderers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: ${GOPATH}/src/github.com/employeeledger/fixtures/crypto-config/ordererOrganizations/employee.ledger.com/tlsca/tlsca.employee.ledger.com-cert.pem
+      path: ${GOPATH}/src/employeeledger/fixtures/crypto-config/ordererOrganizations/employee.ledger.com/tlsca/tlsca.employee.ledger.com-cert.pem
 #
 # List of peers to send various requests to, including endorsement, query
 # and event listener registration.
@@ -219,7 +219,7 @@ peers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: ${GOPATH}/src/github.com/employeeledger/fixtures/crypto-config/peerOrganizations/org1.employee.ledger.com/tlsca/tlsca.org1.employee.ledger.com-cert.pem
+      path: ${GOPATH}/src/employeeledger/fixtures/crypto-config/peerOrganizations/org1.employee.ledger.com/tlsca/tlsca.org1.employee.ledger.com-cert.pem
 
   peer1.org1.employee.ledger.com:
     # this URL is used to send endorsement and query requests
@@ -241,7 +241,7 @@ peers:
 
     tlsCACerts:
       # Certificate location absolute path
-      path: ${GOPATH}/src/github.com/employeeledger/fixtures/crypto-config/peerOrganizations/org1.employee.ledger.com/tlsca/tlsca.org1.employee.ledger.com-cert.pem
+      path: ${GOPATH}/src/employeeledger/fixtures/crypto-config/peerOrganizations/org1.employee.ledger.com/tlsca/tlsca.org1.employee.ledger.com-cert.pem
 
 #
 # Fabric-CA is a special kind of Certificate Authority provided by Hyperledger Fabric which allows
@@ -254,7 +254,7 @@ certificateAuthorities:
 
     tlsCACerts:
       # Comma-Separated list of paths
-      path: ${GOPATH}/src/github.com/employeeledger/fixtures/crypto-config/peerOrganizations/org1.employee.ledger.com/ca/ca.org1.employee.ledger.com-cert.pem
+      path: ${GOPATH}/src/employeeledger/fixtures/crypto-config/peerOrganizations/org1.employee.ledger.com/ca/ca.org1.employee.ledger.com-cert.pem
 
     # Fabric-CA supports dynamic user enrollment via REST APIs. A "root" user, a.k.a registrar, is
     # needed to enroll and invoke new users.
