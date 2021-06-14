@@ -1,2 +1,4 @@
 vendor
 *.exe
+go.mod
+go.sum
