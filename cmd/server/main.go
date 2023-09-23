@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"employeeledger/blockchain"
-	"employeeledger/web"
-    "employeeledger/web/controllers"
+	"github.com/Deeptiman/employeeledger/blockchain"
+	"github.com/Deeptiman/employeeledger/web"
+    "github.com/Deeptiman/employeeledger/web/controllers"
 	"os"
 )
 

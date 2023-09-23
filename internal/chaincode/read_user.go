@@ -1,9 +1,9 @@
-package main
+package chaincode
 
 import (
 	"fmt"
 
-	"employeeledger/chaincode/model"
+	"github.com/Deeptiman/employeeledger/chaincode/model"
 	"github.com/hyperledger/fabric-chaincode-go/shim"
 	pb "github.com/hyperledger/fabric-protos-go/peer"
 )

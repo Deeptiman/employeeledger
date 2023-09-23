@@ -9,7 +9,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"employeeledger/blockchain"
+	"github.com/Deeptiman/employeeledger/blockchain"
 )
 
 var PORT = "6000"

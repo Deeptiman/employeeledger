@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"employeeledger/chaincode/model"
+	"github.com/Deeptiman/employeeledger/chaincode/model"
 )
 
 func (user *FabricUser) GetUserFromLedger(emailValue string) (*model.UserData, error) {

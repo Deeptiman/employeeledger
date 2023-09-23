@@ -1,13 +1,13 @@
-package main
+package chaincode
 
 import (
 	"encoding/json"
 	"fmt"
 
-	"employeeledger/chaincode/model"
+	"github.com/Deeptiman/employeeledger/chaincode/model"
 	"github.com/hyperledger/fabric-chaincode-go/pkg/cid"
 	"github.com/hyperledger/fabric-chaincode-go/shim"
-	pb pb "github.com/hyperledger/fabric-protos-go/peer"
+	pb "github.com/hyperledger/fabric-protos-go/peer"
 )
 
 func (t *HelloWorldServiceChaincode) createUser(stub shim.ChaincodeStubInterface, args []string) pb.Response {

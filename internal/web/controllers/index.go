@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
-	"employeeledger/chaincode/model"
+	"github.com/Deeptiman/employeeledger/chaincode/model"
 )
 
 func (app *Application) IndexPageHandler() func(http.ResponseWriter, *http.Request) {

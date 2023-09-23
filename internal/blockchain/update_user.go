@@ -3,7 +3,7 @@ package blockchain
 import (
 	"fmt"
 
-	"employeeledger/chaincode/model"
+	"github.com/Deeptiman/employeeledger/chaincode/model"
 )
 
 func (user *FabricUser) UpdateUserDataFromLedger(userId, name, email, company,
